@@ -1,37 +1,37 @@
 class Calculator {
-    constructor() {
-        this.textArea = document.getElementById("display");
-        this.clear();
-    }
+  constructor() {
+    this.textArea = document.getElementById("display");
+    this.clear();
+  }
 
-    clear() {
-        this.textArea.value = '';
-        this.operation = undefined;
-    }
-    
-    appendNumber(number) {
-        this.textArea.value += number;
-    }
-   
-    updateDisplay() {
-        this.textArea.value = this.textArea.value;
-    }
+  clear() {
+    this.textArea.value = "";
+    this.operation = undefined;
+  }
+
+  appendNumber(number) {
+    this.textArea.value += number;
+  }
+
+  updateDisplay() {
+    this.textArea.value = this.textArea.value;
+  }
 }
 
 const calculator = new Calculator();
 
-const numberbuttons = document.querySelectorAll("input[button]")
+const numberbuttons = document.querySelectorAll("input[type=button]");
 /*const operationButtons = document.querySelectorAll("input[operator-sign]")
 const equalbutton = document.querySelector("input[equal-sign]")
 const deletebutton = document.querySelector("input[delete-sign]")
 const clearbutton =  document.querySelector("input[clear-sign]")
 */
 
-numberbuttons.forEach(button => {
-    button.addEventListener('click', () => {
-        calculator.appendNumber(button.value);
-        calculator.updateDisplay();
-    });
+numberbuttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    calculator.appendNumber(button.value);
+    calculator.updateDisplay();
+  });
 });
 
 /*
